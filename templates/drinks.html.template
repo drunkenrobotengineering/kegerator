@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DRE Kegerator</title>
+    <style type="text/css">
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    
+    <table id="one-column-emphasis" summary="Beer consumption">
+      <colgroup>
+	<col class="oce-first" />
+      </colgroup>
+      <thead>
+	<tr>
+          <th scope="col">Drinker</th>
+          <th scope="col">Code</th>
+          <th scope="col">Number of drinks</th>
+          <th scope="col">Volume consumed (mL)</th>
+        </tr>
+      </thead>
+      <tbody>
+	#for @drinker in @drinkers:
+	<tr>
+          <td>@drinker.name</td>
+          <td>@drinker.code</td>
+          <td>@drinker.number_of_drinks</td>
+          <td>@drinker.volume_consumed</td>
+	</tr>
+	#end
+      </tbody>
+    </table>
+    <p>Last updated at @{timestamp}.</p>
+  </body>
+</html>

@@ -1,2 +1,6 @@
 kegerator
 =========
+
+Dependencies:
+pyserial
+boto

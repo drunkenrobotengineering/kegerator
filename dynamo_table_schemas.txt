@@ -1,0 +1,70 @@
+drinkers
+	All drinkers using the kegerator.
+-drinker_id (hash key) 
+	The unique ID of the account.  Easiest to use something like an employee ID.
+-volume_consumed
+	The volume of beer he or she has consumed.
+-alcohol_consumed
+	The volume of raw alcohol he or she has consumed.
+-number_of_drinks
+	The number of individual drinks he or she has pulled from the kegerator.
+-payment_account
+	The payment account used by this drinker.
+-name
+	The drinker's name.
+-email
+	The drinker's contact e-mail.
+-total_cost
+	The total cost of all drinks he or she has consumed.
+
+fobs
+	Every fob registered to use the kegerator.
+-fob_id (hash key)
+	The ID stored on the RFID fob.
+-drinker_id
+	The drinker to whom this fob is registered.
+
+drinks
+	All drinks consumed.
+-drinker_id (hash key)
+	The drinker who pulled this drink.
+-timestamp (range key)
+	When this drink was pulled.
+-volume
+	The volume of this drink.
+-tap
+	From which tap this was pulld.
+-cost
+	How much this drink cost.
+-alcohol
+	How much alcohol this drink contained.
+-payer_id
+	The ID of the payer billed for this beer.
+-beer_name
+	The name of this beer.
+
+payers
+	All payers.
+-payer_id (hash key)
+	The ID of the payer.  By default, the drinker_id of the drinker who created it.
+-credit
+	How much this person has deposited into their account.
+
+kegs
+	The different kegs that have been on tap.
+-tap (hash key)
+	To which tap it was connected.
+-finish_timestamp (range key)
+	When this keg was finished.
+-start_timestamp (LSI)
+	When this beer was started.
+-beer_name
+	The name of the beer in the keg.
+-abv
+	How strong the beer is.
+-cost
+	How much the keg cost.
+-volume
+	How much the keg contained.
+-volume_remaining
+	Approximately how much is left in the keg, based on how much has been consumed.
